@@ -116,6 +116,15 @@ items() - key/valueの取得
 ```python
 list(d.items())
 [('white', 'watch out'), ('red', 'stop'), ('yellow', 'fast'), ('green', 'go'), ('blue', 'equal green')]
+
+
+>>> for x, y in d.items():
+...   print(x, y)
+white watch out
+red stop
+yellow fast
+green go
+blue equal green
 ```
 
 copy() - コピー
