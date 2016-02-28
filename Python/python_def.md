@@ -224,3 +224,23 @@ deffunc1
 
 コメントは上から順となっているが、`return`する関数の実行順序は下からとなっていることがわかる。
 
+## グローバル変数
+
+global変数を関数内で変更する場合、`global`を使う。  
+
+```python
+animal = 'monkey'
+def zoo():
+  global animal
+  animal = 'elephant'
+```
+
+## 関数名の取得
+
+現在の関数名は、`関数名.__name__`で取得できる。  
+(どういう場面で使うかはわからない)  
+
+```python
+def zoo():
+  print('this is ' + zoo.__name__)
+```
