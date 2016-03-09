@@ -32,3 +32,7 @@ const m1 = merge.recursive(true, a, b);
 console.log(m1);
 // { zoo: [] }
 ```
+
+## 空のオブジェクトをマージしても空にならない？
+
+`_.unset()`を使わざるを得ないかも。
