@@ -43,3 +43,32 @@ _.pull(animals, 'monkey', 'kangaroo');
 
 const animals2 = _.without(animals, 'snake');
 ```
+
+
+### minBy
+
+最小値を持つ要素を取得することができる。
+
+```js
+const animals = [
+    {
+        name: 'monkey',
+        count: 5
+    }, {
+        name: 'elephant',
+        count: 9
+    }, {
+        name: 'snake',
+        count: 4
+    }, {
+        name: 'horse',
+        count: 7
+    }, {
+        name: 'kangaroo',
+        count: 3
+    }
+];
+
+_.minBy(animals, 'count');
+// {name: "kangaroo", count: 3}
+```
