@@ -104,5 +104,19 @@ _.groupBy(animals, 'name');
 // {'kangaroo': [{...}], 'monkey': [{...}], 'snake': [{...}]}
 ```
 
+### unionBy
+
+指定キーを基準に結合する。  
+重複キーがある場合、先頭が残る。
+
+
+下記どちらも同じ結果になる。  
+
+```js
+_.unionBy([{monkey:100, snake: 200}, {monkey:30, snake: 200}, {monkey:200, snake:10}], 'snake');
+_.unionBy([{monkey:100, snake: 200}, {monkey:30, snake: 200}], [{monkey:200, snake:10}], 'snake');
+```
+
+_.unionWithの場合は、配列中のオブジェクト`[{}, {}]`で実行する場合に、オブジェクト中の値が全て同じものを結合してユニークにしてくれる。  
 
 
