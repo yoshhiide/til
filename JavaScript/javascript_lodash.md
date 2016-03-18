@@ -72,3 +72,37 @@ const animals = [
 _.minBy(animals, 'count');
 // {name: "kangaroo", count: 3}
 ```
+
+
+
+### groupBy
+
+指定したキーやイテレータでグループ別に分別してくれる。  
+配列内のオブジェクトにも対応している。 
+
+```js
+const animals = [
+    {
+        name: 'monkey',
+        age: 5
+    }, {
+        name: 'snake',
+        age: 9
+    }, {
+        name: 'snake',
+        age: 4
+    }, {
+        name: 'monkey',
+        age: 7
+    }, {
+        name: 'kangaroo',
+        age: 3
+    }
+];
+_.groupBy(animals, 'name');
+
+// {'kangaroo': [{...}], 'monkey': [{...}], 'snake': [{...}]}
+```
+
+
+
