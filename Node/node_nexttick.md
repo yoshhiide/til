@@ -61,12 +61,6 @@ const promiseWhile = () => {
   });
 };
 
-const promise = () => {
-  return new Promise((resolve) => {
-    resolve(true);
-  });
-};
-
 promiseWhile().then(() => console.log('then.'));
 console.log('this is async.');
 
@@ -89,12 +83,6 @@ const promiseWhile = () => {
       }
       console.log('for loop1 end.');
     });
-    resolve(true);
-  });
-};
-
-const promise = () => {
-  return new Promise((resolve) => {
     resolve(true);
   });
 };
@@ -129,12 +117,6 @@ const promise = () => {
   });
 };
 
-const promise = () => {
-  return new Promise((resolve) => {
-    resolve(true);
-  });
-};
-
 promise().then(() => console.log('then.'));
 console.log('this is async1.');
 process.nextTick(() => console.log('nextTick2.'));
@@ -151,4 +133,3 @@ console.log('this is async2.');
   
   
 最初のPromiseで重たい処理をするのであれば、`process.nextTick`で処理をさせることが良さそうだが、最後の例のように`process.nextTick`の内部でもPromiseを使って非同期処理とする方が良さそう。  
-
