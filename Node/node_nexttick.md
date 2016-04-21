@@ -118,12 +118,12 @@ console.log('this is async2.');
 次の例では、`process.nextTick`内での処理を非同期処理にしている。  
 
 ```js
-const promiseWhile = () => {
+const promise = () => {
   return new Promise((resolve) => {
     process.nextTick(() => {
       setTimeout(() => {
         resolve(true);
-        console.log('for loop1 end.');
+        console.log('promise setTimeout end.');
       }, 5000);
     });
   });
@@ -135,7 +135,7 @@ const promise = () => {
   });
 };
 
-promiseWhile().then(() => console.log('then.'));
+promise().then(() => console.log('then.'));
 console.log('this is async1.');
 process.nextTick(() => console.log('nextTick2.'));
 console.log('this is async2.');
@@ -143,7 +143,7 @@ console.log('this is async2.');
 // this is async1.
 // this is async2.
 // nextTick2.
-// for loop1 end.
+// promise setTimeout end.
 // then.
 ```
 
