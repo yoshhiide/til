@@ -23,7 +23,7 @@ console.log('this is async.');
   
 ## then以降は非同期処理される
 
-上記例を一部修正して、promise()を.thenでつないだ後に実行する。  
+上記例を一部修正して、promiseWhile()を.thenでつないだ後に実行する。  
   
 ```js
 const promiseWhile = () => {
@@ -133,3 +133,4 @@ console.log('this is async2.');
   
   
 最初のPromiseで重たい処理をするのであれば、`process.nextTick`で処理をさせることが良さそうだが、最後の例のように`process.nextTick`の内部でもPromiseを使って非同期処理とする方が良さそう。  
+
