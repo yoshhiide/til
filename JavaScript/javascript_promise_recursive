@@ -1,0 +1,23 @@
+# Promise処理を配列のサイズ分を直列実行する
+
+### then処理にて再帰する書き方
+
+配列のサイズ分実行したい関数は`promiseFunc()`  
+
+```js
+const promiseRecursive = (args, idx = 0) => {
+  return new Promise((resolve, reject) => {
+    const arg = args[idx];
+    if (!arg) {
+      return resolve(true);
+    }
+    
+    Promise.resolve(true)
+      .then(() => promiseFunc(arg))
+      .then(() => promiseRecursive(args, ++idx))
+      .catch((err) => reject(err));
+  });
+};
+
+promiseRecursive([1,2,3,4,5,6,7,8,9,10]);
+```

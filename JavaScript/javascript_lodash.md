@@ -120,3 +120,17 @@ _.unionBy([{monkey:100, snake: 200}, {monkey:30, snake: 200}], [{monkey:200, sna
 _.unionWithの場合は、配列中のオブジェクト`[{}, {}]`で実行する場合に、オブジェクト中の値が全て同じものを結合してユニークにしてくれる。  
 
 
+### forEach
+
+ネイティブのforEachとの違いは、returnするとどこまで処理されるかわからないこと。  
+```js
+_.forEach([1,2,3,4,5], (num) => {
+  if (num === 3) return;
+  console.log(num);
+});
+// 1
+```
+
+要注意だと思う。
+
+
